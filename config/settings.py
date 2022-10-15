@@ -129,3 +129,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CustomUser instead of the default User model
 AUTH_USER_MODEL = 'accounts.CustomUser'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

@@ -22,7 +22,7 @@ class HomepageTests(SimpleTestCase):
     def test_homepage_does_not_contain_incorrect_html(self):
         self.assertNotContains(self.response, 'Hi there! I should not be on the page.')
 
-    # checks that the name of the view used to resolve / matches HomePageView
+    # Checks that the name of the view used to resolve / matches HomePageView
     def test_homepage_url_resolves_homepageview(self): # new
         view = resolve('/')
         self.assertEqual(
