@@ -12,11 +12,11 @@ class AuthorAdmin(admin.ModelAdmin):
 
 class ReviewInline(admin.TabularInline):
     model = Review
-    
+
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'price', 'amount', 'available', 'created', 'updated')
+    list_display = ('title', 'author', 'price', 'amount', 'available', 'created', 'updated', 'cover')
     list_filter = ('author', 'available', 'created', 'updated')
-    list_editable = ('price', 'amount', 'available')
+    list_editable = ('price', 'amount', 'available', 'cover')
     inlines = [
         ReviewInline,
     ]

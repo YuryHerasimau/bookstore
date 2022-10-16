@@ -46,6 +46,7 @@ class Book(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True)
+    cover = models.ImageField(upload_to='covers/%Y/%m/%d', blank=True)
 
     class Meta:
         ordering = ('title',)
@@ -55,7 +56,7 @@ class Book(models.Model):
 
     # Insteaf of {% url 'book_detail' book.pk %}
     def get_absolute_url(self):
-        return reverse('book_detail', args=[str(self.id)])
+        return reverse('book_detail', kwargs={'pk': str(self.pk)})
 
 
 class Review(models.Model):
