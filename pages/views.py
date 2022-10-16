@@ -7,3 +7,6 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'about.html'
+
+def error_404_view(request, exception):
+    return render(request, 'error_404.html', status=404)
