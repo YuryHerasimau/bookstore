@@ -4,9 +4,9 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <h1>Homepage</h1>  
     {% if user.is_authenticated %}
-        <p>Hi {{ user.username }}!</p>
+        <h3>Hi {{ user.username }}!</h3>
         <p id="timer" class="badge badge-pill badge-warning">Your session expires in: {{ request.session.get_expiry_age }} sec.</p>
         <script>
             let Timer = document.getElementById("timer");
@@ -18,10 +18,7 @@
                 sessionTime--;
             }
         </script>
-        <p><a href="{% url 'account_logout' %}">Log Out</a></p>
     {% else %}
         <p>You are not logged in</p>
-        <p><a href="{% url 'account_login' %}">Log In</a> |
-        <a href="{% url 'account_signup' %}">Sign Up</a></p>
     {% endif %}
 {% endblock content %}
