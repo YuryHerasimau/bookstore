@@ -50,13 +50,20 @@ class Book(models.Model):
 
     class Meta:
         ordering = ('title',)
+        permissions = [
+            ('special_status', 'Can read all books'),
+        ]
 
     def __str__(self):
         return self.title
 
     # Insteaf of {% url 'book_detail' book.pk %}
     def get_absolute_url(self):
-        return reverse('book_detail', kwargs={'pk': str(self.pk)})
+        return reverse('book_detail', args=[str(self.id)])
+
+    def get_cover_url(self):
+        if self.cover:
+            return self.cover.url
 
 
 class Review(models.Model):

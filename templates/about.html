@@ -1,7 +1,16 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}About{% endblock title %}
 
 {% block content %}
+    <br>
+    <div class="">
+        <img class="rounded-circle bookcover" alt="Python" src="{% static 'images/py_logo.jpg' %}">
+    </div>
+    <br>
     <h1>About Page</h1>
+    <p><span class="bold">Bookstore</span>
+        is a project by <a href="https://www.linkedin.com/in/yherasimau/">Yury Herasimau</a>, a beginner Python developer.
+    </p>
 {% endblock content %}
