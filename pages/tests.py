@@ -23,7 +23,7 @@ class HomepageTests(SimpleTestCase):
         self.assertNotContains(self.response, 'Hi there! I should not be on the page.')
 
     # Checks that the name of the view used to resolve / matches HomePageView
-    def test_homepage_url_resolves_homepageview(self): # new
+    def test_homepage_url_resolves_homepageview(self):
         view = resolve('/')
         self.assertEqual(
             view.func.__name__,

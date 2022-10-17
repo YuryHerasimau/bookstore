@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.conf.urls import handler404
+from django.conf.urls import handler404, handler403, handler500
 from django.urls import path, include
 
 urlpatterns = [
     # Django admin
-    path("admin/", admin.site.urls),
+    path("yherasimau/", admin.site.urls),
 
     # User management
     path('accounts/', include('allauth.urls')),
@@ -41,3 +41,5 @@ if settings.DEBUG:
 
 
 handler404 = 'pages.views.error_404_view'
+handler403 = 'pages.views.error_403_view'
+handler500 = 'pages.views.error_500_view'
